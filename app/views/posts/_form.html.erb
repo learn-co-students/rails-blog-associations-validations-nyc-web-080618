@@ -12,9 +12,16 @@
   <% end %>
 
   <div class="field">
+    <h3>Post title:</h3>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
+    <h3>Content:</h3>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <h3>Tags:</h3>
+    <%=  f.collection_check_boxes(:tag_ids, Tag.all, :id, :name)%>
   </div>
+
 
   <div class="actions">
     <%= f.submit %>
